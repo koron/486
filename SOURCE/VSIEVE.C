@@ -70,7 +70,7 @@ void main(int argc, char *argv[])
         fprintf(stderr, "Can't alloc memory\n");
         exit(1);
     }
-    ptop = SegToLinier(csseg32, (unsigned short)ptop+PAGESIZE) & 0xfffff000;
+    ptop = SegToLinier(seg.ds, (unsigned short)ptop+PAGESIZE) & 0xfffff000;
     VMInit(ptop, PHYSSIZE, TBLADR, TBLSIZE);
     VMMapFile(swapfile);
 
